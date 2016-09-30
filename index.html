@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="handlebars-v4.0.5.js"></script>
+
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <div class="recipe">
+      <div class="header">
+        <h1>{{title}}</h1>
+        <h2><em>by {{author}}</em></h2>
+      </div>
+      <div class="body">
+        <h3><strong>Ingredients</strong></h3>
+        <ul>{{#ingredients}}<li>{{amount}} {{name}}</li>{{/ingredients}}</ul>
+        <h3><strong>Directions</strong></h3>
+        <ol>{{#steps}}<li>{{step}}</li>{{/steps}}</ol>
+      </div>
+      <hr>
+    </div>
+  </script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 1.25em;
+      background-color: #f7ece3;
+    }
+
+    #page-title {
+      text-align: center;
+      font-weight: bolder;
+      font-size: 2em;
+      text-transform: uppercase;
+      background-color: #381E0A;
+      color: #f7f5f2;
+      padding: 0.05em;
+      -moz-border-radius: 85px / 85px;
+	    -webkit-border-radius: 85px / 85px;
+	    border-radius: 85px / 85px;
+    }
+
+    .header {
+      background-color: tan;
+      padding: 0.5em;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-title">
+    <h1>My Favorite Recipes</h1>
+  </div>
+  <hr>
+  <div id="recipe-section">
+  </div>
+</body>
+
+<script>
+  var $ = document.querySelector.bind(document);
+  var source = $("#recipe-template").textContent;
+  var template = Handlebars.compile(source);
+  var context1 = {"title": "Orange Julius", "author": "Kathy Uchtman, adapted",
+      "ingredients": [{"amount": "16", "name": "ice cubes"},
+                      {"amount": "2/3 c.", "name": "orange juice concentrate"},
+                      {"amount": "1 c.", "name": "milk"},
+                      {"amount": "1/2 tsp.", "name": "vanilla extract"},
+                      {"amount": "1 c.", "name": "water"},
+                      {"amount": "1/2 c.", "name": "sugar"}],
+      "steps": [{"step": "Combine all ingredients in blender."},
+                {"step": "Serve immediately."}]};
+
+  var context2 = {"title": "Granola", "author": "Heather Nuffer, adapted from rockymtnrunning.com, Mar. 2010, p. 26",
+      "ingredients": [{"amount": "1/2 c.", "name": "butter"},
+                  {"amount": "1 c.", "name": "brown sugar"},
+                  {"amount": "1/3 c.", "name": "water or juice"},
+                  {"amount": "1 tsp.", "name": "vanilla extract"},
+                  {"amount": "3 1/4 c.", "name": "oats"},
+                  {"amount": "1 1/4 c.", "name": "wheat flour"},
+                  {"amount": "1 c.", "name": "chopped nuts"},
+                  {"amount": "1 c.", "name": "coconut"},
+                  {"amount": "1/2 tsp.", "name": "salt"},
+                  {"amount": "1/2 tsp.", "name": "ground cinnamon"},
+                  {"amount": "1/2 tsp.", "name": "ground cardamom"}],
+      "steps": [{"step": "In a pan over medium heat, combine butter, sugar, and water/juice."},
+                  {"step": "Heat until melted and bubbly."},
+                  {"step": "Remove from heat and add vanilla."},
+                  {"step": "Combine remaining ingredients in a LARGE bowl."},
+                  {"step": "Pour liquid mixture over dry mixture and mix."},
+                  {"step": "Preheat oven to 290 degrees F."},
+                  {"step": "Let mixture sit for 10 min."},
+                  {"step": "Spread on 2 lightly-greased baking sheets."},
+                  {"step": "Bake for 15 min. three times, stirring after each time and rotating the baking sheets' positions from the lower rack to the upper rack."},
+                  {"step": "Cool completely before storing."}]};
+
+
+  var contextList = [context1, context2];
+  for (var i = 0; i<contextList.length; i++) {
+    var result = template(contextList[i]);
+    var resultDiv = document.createElement('div');
+    resultDiv.innerHTML = result;
+    var recipeSection = $("#recipe-section");
+    recipeSection.appendChild(resultDiv);
+  }
+  </script>
+
+</html>
