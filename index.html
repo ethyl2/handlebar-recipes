@@ -108,13 +108,31 @@
                   {"amount": "1/2 c.", "name": "fine bread crumbs"},
                   {"amount": "to taste,", "name": "freshly-ground black pepper"}],
     "steps": [{"step": "Preheat oven to 400 degrees F."},
-              {"step": "Spray 2 jellyroll pans with cooking spray"},
+              {"step": "Spray 2 jellyroll pans with cooking spray."},
               {"step": "Mix all ingredients."},
               {"step": "Roll into balls."},
               {"step": "Bake on pans, turning the meatballs half-way through, until lightly-browned and cooked through, about 10-20 min., depending on meatball size."}]};
 
+  var context4 = {"title": "Mom's Chocolate Chip Cookies", "author": "Marilyn Crofts",
+    "ingredients": ["amount": "1 1/2 c.", "name": "butter or equivalent"},
+                  {"amount": "1 c.", "name": "sugar"},
+                  {"amount": "1 c.", "name": "brown sugar"},
+                  {"amount": "2 tsp.": "name": "vanilla"},
+                  {"amount": "2", "name": "eggs"},
+                  {"amount": "1 tsp.", "name": "salt"},
+                  {"amount": "1 tsp.", "name": "baking soda"},
+                  {"amount": "3 1/2 c.", "name": "flour"},
+                  {"amount": "2 c. or 1 bag", "name": "chocolate chips and/or M&Ms"}],
+    "steps": [{"step": "Preheat oven to 350 degrees F."},
+              {"step": "Cream butter and sugars."},
+              {"step": "Mix in vanilla, eggs and salt."},
+              {"step": "Mix in baking soda and flour."},
+              {"step": "Mix in chocolate chips and/or M&Ms"},
+              {"step": "Use cookie scoop or spoon to drop dough on ungreased cookie sheets."},
+              {"step": "Bake around 8-10 minutes, depending on cookie size and desired doneness."},
+              {"step": "Let cool on cookie sheets for 1 min. Then put cookies on cooling rack."}]};
 
-  var contextList = [context1, context2, context3];
+  var contextList = [context1, context2, context3, context4];
   for (var i = 0; i<contextList.length; i++) {
     var result = template(contextList[i]);
     var resultDiv = document.createElement('div');
