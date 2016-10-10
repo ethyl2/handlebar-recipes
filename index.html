@@ -132,7 +132,20 @@
               {"step": "Bake around 8-10 minutes, depending on cookie size and desired doneness."},
               {"step": "Let cool on cookie sheets for 1 min. Then put cookies on cooling rack."}]};
 
-  var contextList = [context1, context2, context3, context4];
+  var context5 = {"title": "Lime Baked Fish", "author": "Heather Nuffer, adapted from The South Beach Diet",
+    "ingredients": [{"amount": "about 1 lb.", "name": "fish fillets -- we especially like salmon"},
+                  {"amount": "2 T.", "name": "butter, melted"},
+                  {"amount": "to taste,", "name": "lemon pepper seasoning"},
+                  {"amount": "1/4 c.", "name": "lime juice"},
+                  {"amount": "1", "name": "lime, thinly sliced, optional"},
+                  {"amount": "1/4 c.", "name": "green onion, chopped"}],
+    "steps": [{"step": "Preheat oven to 325 degrees F."},
+              {"step": "Lightly spray baking dish with cooking spray and arrange fish in dish."},
+              {"step": "Brush fish with melted butter and sprinkle with lemon pepper seasoning."},
+              {"step": "Top with lime juice, lime slices (if using) and green onions."},
+              {"step": "Bake for about 15-20 min. or until fish flakes easily."}]};
+
+  var contextList = [context1, context2, context3, context4, context5];
   for (var i = 0; i<contextList.length; i++) {
     var result = template(contextList[i]);
     var resultDiv = document.createElement('div');
