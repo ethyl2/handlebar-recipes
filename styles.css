@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  margin: 1.25em;
+  background-color: #f7ece3;
+}
+
+#page-title {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2em;
+  text-transform: uppercase;
+  background-color: #381E0A;
+  color: #f7f5f2;
+  padding: 0.05em;
+  -moz-border-radius: 85px / 85px;
+  -webkit-border-radius: 85px / 85px;
+  border-radius: 85px / 85px;
+}
+
+.header {
+  background-color: tan;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+@media print {
+  body {
+    font-size: 12px;
+    background-color: white;
+    color: black;
+  }
+
+  .recipe {
+    border-top: 1px dashed gray;
+    border-right: 1px dashed gray;
+    border-left: 1px dashed gray;
+
+  }
+}

@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" href="styles.css">
   <script src="handlebars-v4.0.5.js"></script>
 
   <script id="recipe-template" type="text/x-handlebars-template">
@@ -21,33 +21,6 @@
       <hr>
     </div>
   </script>
-
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 1.25em;
-      background-color: #f7ece3;
-    }
-
-    #page-title {
-      text-align: center;
-      font-weight: bolder;
-      font-size: 2em;
-      text-transform: uppercase;
-      background-color: #381E0A;
-      color: #f7f5f2;
-      padding: 0.05em;
-      -moz-border-radius: 85px / 85px;
-	    -webkit-border-radius: 85px / 85px;
-	    border-radius: 85px / 85px;
-    }
-
-    .header {
-      background-color: tan;
-      padding: 0.5em;
-      border-radius: 5px;
-    }
-  </style>
 </head>
 
 <body>
@@ -146,11 +119,12 @@
               {"step": "Bake for about 15-20 min. or until fish flakes easily."}]};
 
   var contextList = [context1, context2, context3, context4, context5];
+  var recipeSection = $("#recipe-section");
   for (var i = 0; i<contextList.length; i++) {
     var result = template(contextList[i]);
     var resultDiv = document.createElement('div');
+    resultDiv.classList.add('recipe');
     resultDiv.innerHTML = result;
-    var recipeSection = $("#recipe-section");
     recipeSection.appendChild(resultDiv);
   }
   </script>

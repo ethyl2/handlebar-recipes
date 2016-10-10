@@ -1,4 +1,4 @@
-# Favorite Recipes with handlebars-v4
+# Favorite Recipes with handlebars
 
 This is a simple example of using handlebars to create semantic templates.
 
