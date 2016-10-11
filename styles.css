@@ -23,6 +23,11 @@ body {
   border-radius: 5px;
 }
 
+#print-button {
+  display: block;
+  margin: auto 0 auto auto;
+}
+
 @media print {
   body {
     font-size: 12px;
@@ -34,6 +39,9 @@ body {
     border-top: 1px dashed gray;
     border-right: 1px dashed gray;
     border-left: 1px dashed gray;
+  }
 
+  #print-button {
+    display: none;
   }
 }
